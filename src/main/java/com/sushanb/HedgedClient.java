@@ -152,7 +152,6 @@ public class HedgedClient {
     }
 
     public static void main(String[] args) {
-        // Parse maven flags (-D properties) with fallbacks
         String projectId = System.getProperty("project", "");
         String instanceId = System.getProperty("instance", "");
         String tableId = System.getProperty("table", "");
@@ -160,8 +159,9 @@ public class HedgedClient {
         long deadlineSecondary = Long.parseLong(System.getProperty("deadline_secondary", ""));
 
         // Hardcoded for this repro, but you could easily make this a flag too!
-        String rowKey = "5120#10000#000000000";
+        String rowKey = "";
 
+        // hardcode to 1
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
         try (BigtableDataClient primaryClient = createClient(projectId, instanceId, "asia-east1", Duration.ofMillis(deadlinePrimary));
