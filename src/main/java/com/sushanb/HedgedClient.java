@@ -35,6 +35,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import org.threeten.bp.Duration;
 
+/**
+ * Usage mvn compile exec:java -Dexec.mainClass="com.sushanb.HedgedClient" -Dproject="" -Dinstance="" -Dtable="" -Ddeadline_primary="2000" -Ddeadline_secondary="1000"
+ */
+
 public class HedgedClient {
     private static final Logger logger = Logger.getLogger(HedgedClient.class.getName());
 
